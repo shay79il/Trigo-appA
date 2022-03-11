@@ -1,7 +1,7 @@
 from os import getenv
 from flask import Flask, request
 
-app = Flask("app-a")
+app = Flask("AppA")
 
 
 @app.route('/', methods=['GET'])
@@ -16,7 +16,8 @@ def score_server():
               <title>{url}</title>
           </head>
           <body>
-            <h1>The ENV_NAME is {env} </h1>
+            <h1>The ENV_NAME is {url} </h1>
+            <h2>The ENV_NAME is {env} </h2>
             <h2>The REGION is {region} </h2>
           </body>
           </html>

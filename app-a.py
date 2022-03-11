@@ -1,7 +1,7 @@
 from os import getenv
 from flask import Flask, request
 
-app = Flask("app-a")
+app = Flask("AppA")
 
 
 @app.route('/', methods=['GET'])

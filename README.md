@@ -1,2 +1,1 @@
 # Trigo-appA
-Home assignment

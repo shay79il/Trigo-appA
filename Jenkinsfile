@@ -1,4 +1,4 @@
-properties([githubProjectProperty(displayName: '', projectUrlStr: 'https://github.com/shay79il/Trigo-appA/'), parameters([[$class: 'ChoiceParameter', choiceType: 'PT_SINGLE_SELECT', filterLength: 1, filterable: false, name: 'ENV_NAME', randomName: 'choice-parameter-322005257306874', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: false, script: 'return [\'DEV\']'], script: [classpath: [], sandbox: false, script: 'return [\'DEV\',\'PRODUCTION\']']]], [$class: 'CascadeChoiceParameter', choiceType: 'PT_SINGLE_SELECT', filterLength: 1, filterable: false, name: 'REGION', randomName: 'choice-parameter-322005293393729', referencedParameters: 'ENV_NAME', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: false, script: 'return [\'us-east-1\']'], script: [classpath: [], sandbox: false, script: '''def choices
+properties([githubProjectProperty(displayName: '', projectUrlStr: 'https://github.com/shay79il/Trigo-appA/'), parameters([[$class: 'ChoiceParameter', choiceType: 'PT_SINGLE_SELECT', filterLength: 1, filterable: false, name: 'ENV_NAME', randomName: 'choice-parameter-324556400114368', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: false, script: 'return [\'DEV\']'], script: [classpath: [], sandbox: false, script: 'return [\'DEV\',\'PRODUCTION\']']]], [$class: 'CascadeChoiceParameter', choiceType: 'PT_SINGLE_SELECT', filterLength: 1, filterable: false, name: 'REGION', randomName: 'choice-parameter-324556405464984', referencedParameters: 'ENV_NAME', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: false, script: 'return [\'us-east-1\']'], script: [classpath: [], sandbox: false, script: '''def choices
 switch(ENV_NAME){
     case \'PRODUCTION\':
         choices = [\'us-east-1\', \'us-east-2\', \'us-east-3\']
@@ -10,7 +10,8 @@ switch(ENV_NAME){
         choices = [\'us-east-1\']
         break
 }
-return choices''']]]]), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([githubPush()])])
+return choices''']]], string(defaultValue: '1', name: 'REPLICAS')]), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([githubPush()])])
+
 pipeline {
     agent any
 

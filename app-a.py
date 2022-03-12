@@ -17,7 +17,7 @@ def score_server():
           </head>
           <body>
             <h1>The URL is {url} </h1>
-            <h2>The ENV_NAME is {env} </h2>
+            <h2>The ENV_NAME is {env} www</h2>
             <h2>The REGION is {region} </h2>
           </body>
           </html>
